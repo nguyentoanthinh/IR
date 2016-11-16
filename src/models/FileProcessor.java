@@ -43,11 +43,18 @@ public class FileProcessor {
         if(!folder.exists()) {
             folder.mkdirs();
         }
-        File file = new File(folder.getAbsolutePath() + "/" + article.getId() + "." + article.getCat());
+//        File file = new File(folder.getAbsolutePath() + "/" + article.getId() + "." + article.getCat());
         // if file doesnt exists, then create it
-        if (!file.exists()) {
-            file.createNewFile();
+//        if (!file.exists()) {
+//            file.createNewFile();
+//        }
+        int i = 0;
+        File file = new File(folder.getAbsolutePath() + "/" + i + "." + article.getCat());
+        while(file.exists()) {
+            i++;
+            file = new File(folder.getAbsolutePath() + "/" + i + "." + article.getCat());
         }
+        file.createNewFile();
 
         BufferedWriter bw = new BufferedWriter(new FileWriter(file));
         bw.write(article.getContent());

@@ -18,7 +18,6 @@ public class Crawler {
     public void crawl(List<Rss> rSSs) {
         Document docRSS;
         try {
-            int i = 0;
             for(Rss rss : rSSs) {
                 docRSS = Jsoup.connect(rss.getLink()).get();
                 // get all links
@@ -48,10 +47,8 @@ public class Crawler {
                         }
                         article.setContent(content);
                         article.setCat(rss.getCat());
-                        article.setId(i);
-                        System.out.println("article" + article.getContent());
+
                         fileProcessor.generateDataFromWeb(article);
-                        i++;
                     }
                 }
             }

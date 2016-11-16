@@ -5,14 +5,12 @@ package models;
  * @author Cuong Nguyen Ngoc
  */
 public class Article {
-    private int id;
     private String content;
     private String cat;
 
     public Article() {}
 
-    public Article(int id, String content, String cat) {
-        this.id = id;
+    public Article(String content, String cat) {
         this.content = content;
         this.cat = cat;
     }
@@ -25,19 +23,10 @@ public class Article {
         this.content = content;
     }
 
-    public Article(int id, String cat) {
-        this.id = id;
+    public Article(String cat) {
         this.cat = cat;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    
     public String getCat() {
         return cat;
     }
