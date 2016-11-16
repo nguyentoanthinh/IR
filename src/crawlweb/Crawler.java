@@ -47,7 +47,7 @@ public class Crawler {
                         }
                         article.setContent(content);
                         article.setCat(rss.getCat());
-
+                        System.out.println("article " + article.getContent());
                         fileProcessor.generateDataFromWeb(article);
                     }
                 }
